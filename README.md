@@ -3,4 +3,4 @@
   - Lucas Leite Nicola
   - José Pedro Gama Ramírez
   - Juan Manuel Aranda Padilla
-  - Patricio 
+  - Patricio Martínez Martínez
