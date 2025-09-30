@@ -1,0 +1,36 @@
+import cv2
+
+# Abrir la cámara (0 = cámara por defecto)
+cap = cv2.VideoCapture(0)
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        print("No se pudo acceder a la cámara")
+        break
+
+    # Convertir a escala de grises
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # En lugar de np.mean(), usamos el promedio manual
+    mean_val = gray.sum() / (gray.shape[0] * gray.shape[1])
+
+    # Definir un umbral para decidir si hay "algo"
+    if mean_val > 30:  
+        text = "VALIDO"
+        color = (0, 255, 0)  # verde
+    else:
+        text = "INVALIDO"
+        color = (0, 0, 255)  # rojo
+
+    # Mostrar el resultado en pantalla
+    cv2.putText(frame, text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX,
+                1.2, color, 3)
+    cv2.imshow("Deteccion", frame)
+
+    # Presionar 'q' para salir
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
