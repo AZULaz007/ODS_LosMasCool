@@ -5,5 +5,5 @@
   - José Pedro Gama Ramírez
   - Juan Manuel Aranda Padilla
   - Patricio Martínez Martínez
-  - 
+    
 NOTA: Camilo Duque estuvo editando este archivo.
